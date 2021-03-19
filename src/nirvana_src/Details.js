@@ -3,7 +3,7 @@ import React from 'react';
 function Details(props) {
     if (props.country) {
         return (
-            <div className="details-content" key="details">
+            <div key="details">
                 <div key="div-1">
                     <h2 className="display-4" key="title-0" align="center">{props.country.name}</h2>
                     <ul key="ul-2">
@@ -24,13 +24,11 @@ function Details(props) {
                         </li>
                     </ul>
                 </div>
-                <div key="div-2" className="overflow-scroll">
-                    <ul className="list-group" key="ul-0">
-                        <li className="list-group-item" key="title">
-                            <h3 align="center" key="title-1">
-                                States
-                            </h3>
-                        </li>
+                <h3 align="center">
+                    States
+                </h3>
+                <div className="overflow-auto" data-spy="scroll" style={{height: 300}}>
+                    <ul className="list-group">
                         {
                             props.states.map(state => {
                                     return (

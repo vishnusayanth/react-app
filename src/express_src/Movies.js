@@ -1,30 +1,27 @@
 import React from 'react';
 
 function Movies(props) {
-    let [movies, setMovies] = React.useState([]);
-    React.useEffect(() => {
-        fetch(`https://vishnusayanth-express-app.herokuapp.com/movies`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        }).then(resp => resp.json()).then(resp => setMovies(resp))
-    }, [])
-    return (
-        <div className="overflow-scroll" key="movies">
-            <input className="form-control" id="search" placeholder="Search"/>
-            <ul className="list-group">
-                {movies.map(movie => {
-                        return (
-                            <li className="list-group-item cursor movies" key={movie.id}
-                                onClick={props.selectFunction(movie)}>
-                                <h5>{movie.name}</h5>
-                            </li>
-                        )
-                    }
-                )}
-            </ul>
-        </div>
-    )
+    if (props.movies) {
+        return (
+            <div className="card-body overflow-auto">
+                {props.movies.map(movie => {
+                    return (
+                        <div className="row align-items-center mb-4 search-item" key={movie.name}
+                             onClick={() => props.selectFunction(movie)}>
+                            <div className="col">
+                                <button className="btn btn-outline-dark" type="button">
+                                    <span className="mr-1"><span className="fab fa-imdb"></span></span>
+                                    {movie.name}
+                                </button>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+        )
+    } else {
+        return '';
+    }
 }
+
 export default Movies;
