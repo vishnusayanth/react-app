@@ -47,12 +47,10 @@ function Express() {
                     <div className="card border-light shadow-sm">
                         <div className="card-header border-bottom border-light d-flex justify-content-between">
                             <h2 className="h5 mb-0">Details</h2>
-                            <a href="#" className="btn btn-sm btn-secondary">See all</a>
                         </div>
                         <Movie movie={selectedMovie}/>
                     </div>
                 </div>
-
             </React.Fragment>
         );
     }
