@@ -7,24 +7,24 @@ function Countries(props) {
                 <thead className="thead-light">
                 <tr>
                     <th scope="col"><span className="icon icon-xs mr-3">
-                        <span className="fas fa-flag"></span></span>
+                        <span className="fas fa-flag"> </span></span>
                         Flag
                     </th>
                     <th scope="col"><span className="icon icon-xs mr-3">
-                        <span className="fas fa-chess-king"></span></span>
+                        <span className="fas fa-chess-king"> </span></span>
                         Country
                     </th>
                     <th scope="col"><span className="icon icon-xs mr-3">
-                        <span className="fas fa-star"></span></span>
+                        <span className="fas fa-star"> </span></span>
                         Capital
                     </th>
                     <th scope="col"><span className="icon icon-xs mr-3">
-                        <span className="fas fa-microphone"></span></span>
+                        <span className="fas fa-microphone"> </span></span>
                         Official language
                     </th>
                     <th scope="col">
                         <span className="icon icon-xs mr-3">
-                            <span className="fas fa-globe-europe"></span></span>
+                            <span className="fas fa-globe-europe"> </span></span>
                         Continent
                     </th>
                 </tr>

@@ -9,14 +9,14 @@ function Movie(props) {
                     <li className="list-group-item px-0">
                         <div className="row align-items-center">
                             <div className="col-auto">
-                                <a href="#" className="user-avatar">
-                                    <img className="rounded-circle" alt="Image placeholder"
-                                         src="../../assets/img/cinema.jpg"/>
-                                </a>
+                                <span className="user-avatar">
+                                    <img className="rounded-circle" alt="Cinema icon"
+                                         src={"../../assets/img/cinema.jpg"}/>
+                                </span>
                             </div>
                             <div className="col-auto ml--2">
                                 <h4 className="h6 mb-0">
-                                    <a href="#">{props.movie.movie_name}</a>
+                                    <span>{props.movie.movie_name}</span>
                                 </h4>
                                 <ul>
                                     <li>{props.movie.director_name}</li>
@@ -24,8 +24,8 @@ function Movie(props) {
                                 </ul>
                             </div>
                             <div className="col text-right">
-                                <a href="#" className="btn btn-sm btn-tertiary">
-                                    IMDB : {props.movie.imdb_rating}</a>
+                                <span className="btn btn-sm btn-tertiary">
+                                    IMDB : {props.movie.imdb_rating}</span>
                             </div>
                         </div>
                     </li>

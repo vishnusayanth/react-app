@@ -58,26 +58,26 @@ function Profile() {
                 </div>
                 <div className="col-12 col-xl-4">
                     <div className="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US"
-                         data-type="horizontal" data-theme="light" data-vanity="vishnusayanth"><a
+                         datatype="horizontal" data-theme="light" data-vanity="vishnusayanth"><a
                         className="LI-simple-link" href='https://in.linkedin.com/in/vishnusayanth?trk=profile-badge'>Vishnu
                         Sayanth A V</a></div>
                     <div>
                         <div className="mb-4 mt-5">
                         </div>
                         <button className="btn btn-github" type="button">
-                            <span className="mr-1"><span className="fab fa-github"></span></span>
+                            <span className="mr-1"><span className="fab fa-github"> </span></span>
                             GitHub
                         </button>
                         <br/>
                         <br/>
                         <button className="btn btn-success" type="button">
-                            <span className="mr-1"><span className="fab fa-hackerrank"></span></span>
+                            <span className="mr-1"><span className="fab fa-hackerrank"> </span></span>
                             HackerRank
                         </button>
                         <br/>
                         <br/>
                         <button className="btn btn-primary" type="button">
-                            <span className="mr-1"><span className="fab fa-firefox"></span></span>
+                            <span className="mr-1"><span className="fab fa-firefox"> </span></span>
                             Web Page
                         </button>
                         <br/>
@@ -86,8 +86,8 @@ function Profile() {
 
                 </div>
             </div>
-            <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async
-                    defer></script>
+            <script type="text/javascript" src={"https://platform.linkedin.com/badges/js/profile.js"} async
+                    defer> </script>
         </React.Fragment>
     );
 }

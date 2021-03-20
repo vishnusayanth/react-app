@@ -50,7 +50,7 @@ function Express() {
                         </div>
                         <Movie movie={selectedMovie}/>
                     </div>
-                </div>
+                </div> 
             </React.Fragment>
         );
     }

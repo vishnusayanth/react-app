@@ -10,7 +10,7 @@ function Movies(props) {
                              onClick={() => props.selectFunction(movie)}>
                             <div className="col">
                                 <button className="btn btn-outline-dark" type="button">
-                                    <span className="mr-1"><span className="fab fa-imdb"></span></span>
+                                    <span className="mr-1"><span className="fab fa-imdb"> </span></span>
                                     {movie.name}
                                 </button>
                             </div>
