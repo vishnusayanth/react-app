@@ -26,8 +26,10 @@ function Express() {
         }).then(resp => resp.json()).then(resp => setSelectedMovie(resp))
     }
     if (!fetchDone) {
-        return <div className="spinner-border" role="status">
-            <span className="sr-only">Loading...</span>
+        return <div style={{height:505}} align={"center"}>
+            <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+            </div>
         </div>;
     } else {
         return (

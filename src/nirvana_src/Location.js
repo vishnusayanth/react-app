@@ -33,13 +33,15 @@ function Location() {
     }, [tokenString]);
 
     if (!fetchDone) {
-        return <div className="spinner-border" role="status">
-            <span className="sr-only">Loading...</span>
+        return <div style={{height: 505}} align={"center"}>
+            <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+            </div>
         </div>;
     } else {
         return (
             <React.Fragment>
-                <div className="card overflow-auto" data-spy="scroll" style={{height:505}}>
+                <div className="card overflow-auto" data-spy="scroll" style={{height: 505}}>
                     <h3 align="center">Countries</h3>
                     <Countries TOKEN={tokenString} countries={countries} selectFunction={setCountry}
                                key="country"/>

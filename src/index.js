@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import About from "./About";
 import Nasa from './nasa_src/Nasa';
 import Express from "./express_src/Express";
 import Location from "./nirvana_src/Location";
+import Profile from "./Profile";
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,8 +14,11 @@ ReactDOM.render(
     <React.StrictMode>
         <Router>
             <Switch>
-                <Route path="/home">
+                <Route exact path="/">
                     <h1>Home</h1>
+                </Route>
+                <Route path="/about">
+                    <About/>
                 </Route>
                 <Route path="/nasa">
                     <Nasa/>
@@ -23,6 +28,9 @@ ReactDOM.render(
                 </Route>
                 <Route path="/movies">
                     <Express/>
+                </Route>
+                <Route path="/profile">
+                    <Profile/>
                 </Route>
             </Switch>
         </Router>
