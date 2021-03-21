@@ -4,19 +4,23 @@ import React from 'react';
 function Camera(props) {
     if (props.photos) {
         return (
-            <div key="camera">
-                {props.photos.map(d =>
-                    <div key={d.id}>
-                        <p>{d.id}</p>
-                        <p>{d.rover.name}</p>
-                        <p>{d.sol}</p>
-                        <p>{d.camera.name}</p>
-                        <p><img src={d.img_src} alt={d.id}/></p>
-                        <p>{d.earth_date}</p>
+            <React.Fragment>
+                <ol className="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"> </li>
+                    {props.photos.map(d =><li data-target="#carouselExampleIndicators" key={"index-"+d.id} data-slide-to={d.id}> </li>)}
+                </ol>
+                <div className="carousel-inner">
+                    {props.photos.map(d =>
+                    <div key={"img" + d.id} className="carousel-item active">
+                        <img className="d-block w-100 h-25" src={d.img_src} alt={d.rover.name + d.id}/>
+                        <div className="carousel-caption d-none d-md-block">
+                            <h5>{d.rover.name} - {d.sol}</h5>
+                            <p>{d.camera.name} - {d.earth_date}</p>
+                        </div>
                     </div>
-                )}
-            </div>
-        );
+                    )}
+                </div>
+            </React.Fragment>);
     } else {
         return (
             <div>Select Rover to see images</div>

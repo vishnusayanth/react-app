@@ -9,7 +9,7 @@ function Nasa() {
     let token = process.env.REACT_APP_NASA_API_KEY;
     let apod = `https://api.nasa.gov/planetary/apod?api_key=${token}`;
     const [photos, setPhotos] = React.useState(null);
-
+    let roversList = ['spirit', 'opportunity', 'curiosity'];
     const [selectedRover, setSelectedRover] = useState(null);
     let [apodItem, setApodItem] = React.useState(null);
     React.useEffect(() => {
@@ -27,20 +27,29 @@ function Nasa() {
 
     return (
         <React.Fragment>
-            <div className="content" key="nasa">
-                <div className="overflow-auto" data-spy="scroll">
-                    <h3 align="center" className="alert alert-success">Rovers</h3>
-                    <Rovers apiKey={token} selectFunction={setSelectedRover}/>
-                </div>
-                <div>
-                    <h3 align="center" className="alert alert-success">Details</h3>
-                    <div id="details">
+            <h3 align="center" className={"display-4"}>NASA</h3>
+            <div className="overflow-auto" data-spy="scroll">
+                <h3 align="center">Rovers</h3>
+                <Rovers roversList={roversList} selectFunction={setSelectedRover}/>
+            </div>
+            <div>
+                <h3 align="center">Details</h3>
+                <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
                         <Camera apiKey={token} photos={photos}/>
-                    </div>
+                    <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                       data-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"> </span>
+                        <span className="sr-only">Previous</span>
+                    </a>
+                    <a className="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                       data-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"> </span>
+                        <span className="sr-only">Next</span>
+                    </a>
                 </div>
-                <div>
-                    <Apod item={apodItem}/>
-                </div>
+            </div>
+            <div>
+                <Apod item={apodItem}/>
             </div>
         </React.Fragment>
     );

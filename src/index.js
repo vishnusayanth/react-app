@@ -14,22 +14,22 @@ ReactDOM.render(
     <React.StrictMode>
         <Router>
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/home">
                     <h1>Home</h1>
                 </Route>
-                <Route path="/about">
+                <Route exact path="/about">
                     <About/>
                 </Route>
-                <Route path="/nasa">
+                <Route exact path="/nasa">
                     <Nasa/>
                 </Route>
-                <Route path="/location">
+                <Route exact path="/location">
                     <Location/>
                 </Route>
-                <Route path="/movies">
+                <Route exact path="/movies">
                     <Express/>
                 </Route>
-                <Route path="/profile">
+                <Route exact path="/profile">
                     <Profile/>
                 </Route>
             </Switch>
