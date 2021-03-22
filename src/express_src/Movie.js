@@ -2,7 +2,6 @@ import React from 'react';
 
 function Movie(props) {
     if (props.movie) {
-        console.log(props.movie);
         return (
             <div className="card-body">
                 <ul className="list-group list-group-flush list my--3">
@@ -33,7 +32,7 @@ function Movie(props) {
             </div>
         )
     }
-    return '';
+    return <div><br/><p align={"center"}>Click on a movie to view details</p></div>;
 }
 
 export default Movie;

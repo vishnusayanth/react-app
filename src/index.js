@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import About from "./About";
+import Home from "./Home";
 import Nasa from './nasa_src/Nasa';
 import Express from "./express_src/Express";
 import Location from "./nirvana_src/Location";
@@ -14,11 +14,11 @@ ReactDOM.render(
     <React.StrictMode>
         <Router>
             <Switch>
-                <Route exact path="/home">
-                    <h1>Home</h1>
+                <Route exact path="/">
+                    <Home/>
                 </Route>
-                <Route exact path="/about">
-                    <About/>
+                <Route exact path="/home">
+                    <Home/>
                 </Route>
                 <Route exact path="/nasa">
                     <Nasa/>

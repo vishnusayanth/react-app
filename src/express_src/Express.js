@@ -26,7 +26,7 @@ function Express() {
         }).then(resp => resp.json()).then(resp => setSelectedMovie(resp))
     }
     if (!fetchDone) {
-        return <div style={{height:505}} align={"center"}>
+        return <div align={"center"}>
             <div className="spinner-border" role="status">
                 <span className="sr-only">Loading...</span>
             </div>
@@ -35,7 +35,7 @@ function Express() {
         return (
             <React.Fragment>
                 <h3 align="center">Top rated movies list</h3>
-                <div className="col-12 col-lg-6 mb-4 overflow-auto" data-spy="scroll" style={{height:440}}>
+                <div className="col-12 col-lg-6 mb-4 overflow-auto" data-spy="scroll" style={{height:550}}>
                     <div className="card border-light shadow-sm">
                         <div className="card-header border-bottom border-light">
                             <h2 className="h5 mb-0">Movies</h2>

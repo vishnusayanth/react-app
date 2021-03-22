@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Profile(props) {
+function Profile() {
     let url = 'https://vishnusayanth.pythonanywhere.com/api/countries/';
     const tokenString = process.env.REACT_APP_NIRVANA_API_KEY;
     let [countries, setCountries] = React.useState([]);
@@ -14,14 +14,28 @@ function Profile(props) {
             },
         }).then(resp => resp.json()).then(resp => setCountries(resp.countries))
     });
-    if (countries) {
+    let sendEmail = () => {
+        console.log('fn called');
+        let url = 'https://vishnusayanth.pythonanywhere.com/contact/';
+        let formData = document.querySelector('form');
+        formData = new FormData(formData);
+        console.log(formData);
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': false,
+            },
+            body:formData
+        }).then(resp => resp.json()).then(resp => alert(resp.data));
+    }
+    if (countries.length !== 0) {
         return (
             <React.Fragment>
                 <div className="row">
                     <div className="col-12 col-xl-8">
                         <div className="card card-body bg-white border-light shadow-sm mb-4">
                             <h2 className="h5 mb-4">Contact me</h2>
-                            <form>
+                            <form id={"form"}>
                                 <div className="row">
                                     <div className="col-md-6 mb-3">
                                         <div>
@@ -67,7 +81,7 @@ function Profile(props) {
                                     </div>
                                 </div>
                                 <div className="mt-3">
-                                    <button type="submit" className="btn btn-primary">Send</button>
+                                    <button type="button" onClick={()=>sendEmail()} className="btn btn-primary">Send</button>
                                 </div>
                             </form>
                         </div>
@@ -107,6 +121,12 @@ function Profile(props) {
                         defer> </script>
             </React.Fragment>
         );
+    } else {
+        return <div style={{height: 505}} align={"center"}>
+            <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
+            </div>
+        </div>;
     }
 }
 

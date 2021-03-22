@@ -17,13 +17,11 @@ function Rovers(props) {
                                 <div className="col-12 col-xl-7 px-xl-0">
                                     <div className="d-none d-sm-block">
                                         <h2 className="h5">Mars Rover : </h2>
-                                        <button className="mb-1 btn btn-dark" onClick={()=>props.selectFunction(rover)}>{rover.toLocaleUpperCase()}</button>
+                                        <button className="mb-1 btn btn-dark" onClick={()=>props.selectFunction(rover)}>{rover}</button>
                                     </div>
-                                    <small>Feb 1 - Apr 1, <span className="icon icon-small"><span
-                                        className="fas fa-globe-europe"> </span></span> WorldWide</small>
                                     <div className="small mt-2">
                                         <span className="fas fa-angle-up text-success"> </span>
-                                        <span className="text-success font-weight-bold">18.2%</span> Since last month
+                                        &nbsp;&nbsp;&nbsp;Click to view snapshots
                                     </div>
                                 </div>
                             </div>

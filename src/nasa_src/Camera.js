@@ -4,27 +4,23 @@ import React from 'react';
 function Camera(props) {
     if (props.photos) {
         return (
-            <React.Fragment>
-                <ol className="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"> </li>
-                    {props.photos.map(d =><li data-target="#carouselExampleIndicators" key={"index-"+d.id} data-slide-to={d.id}> </li>)}
-                </ol>
-                <div className="carousel-inner">
+            <div className="container">
+                <h1 className="font-weight-light text-center text-lg-left mt-4 mb-0">{props.roverName+" snapshots"}</h1>
+                <hr className="mt-2 mb-5"/>
+                <div className="row text-center text-lg-left">
                     {props.photos.map(d =>
-                    <div key={"img" + d.id} className="carousel-item active">
-                        <img className="d-block w-100 h-25" src={d.img_src} alt={d.rover.name + d.id}/>
-                        <div className="carousel-caption d-none d-md-block">
-                            <h5>{d.rover.name} - {d.sol}</h5>
-                            <p>{d.camera.name} - {d.earth_date}</p>
+                        <div className="col-lg-3 col-md-4 col-6" key={"img" + d.id}>
+                            <a target={"_blank"} rel={"noreferrer"} href={d.img_src} className="d-block mb-4 h-100">
+                                <img className="img-fluid img-thumbnail"
+                                     src={d.img_src} alt={"img" + d.id}/>
+                            </a>
                         </div>
-                    </div>
                     )}
                 </div>
-            </React.Fragment>);
+            </div>
+        )
     } else {
-        return (
-            <div>Select Rover to see images</div>
-        );
+        return '';
     }
 
 }

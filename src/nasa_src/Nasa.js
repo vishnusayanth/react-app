@@ -24,35 +24,53 @@ function Nasa() {
             ).then(res => res.json()).then(res => setPhotos(res.photos));
         }
     }, [selectedRover, token]);
-
-    return (
-        <React.Fragment>
-            <h3 align="center" className={"display-4"}>NASA</h3>
-            <div className="overflow-auto" data-spy="scroll">
-                <h3 align="center">Rovers</h3>
-                <Rovers roversList={roversList} selectFunction={setSelectedRover}/>
+    if (!apodItem || !roversList) {
+        return <div style={{height: 505}} align={"center"}>
+            <div className="spinner-border" role="status">
+                <span className="sr-only">Loading...</span>
             </div>
-            <div>
-                <h3 align="center">Details</h3>
-                <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                        <Camera apiKey={token} photos={photos}/>
-                    <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                       data-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"> </span>
-                        <span className="sr-only">Previous</span>
-                    </a>
-                    <a className="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                       data-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"> </span>
-                        <span className="sr-only">Next</span>
-                    </a>
+        </div>;
+    } else {
+        return (
+            <React.Fragment>
+                <h3 align="center" className={"display-4"}>NASA</h3>
+                <div>
+                    <Rovers roversList={roversList} selectFunction={setSelectedRover}/>
                 </div>
-            </div>
-            <div>
-                <Apod item={apodItem}/>
-            </div>
-        </React.Fragment>
-    );
+                <button type="button" className="btn btn-sm btn-tertiary col-sm-3" data-toggle="modal"
+                        data-target="#modal-achievement">Astronomy Picture Of the Day
+                </button>
+                <div className="modal fade" id="modal-achievement" tabIndex="-1" role="dialog"
+                     aria-labelledby="modal-achievement" aria-hidden="true">
+                    <div className="modal-dialog modal-tertiary modal-dialog-centered" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header mx-auto">
+                                <p className="lead mb-0 text-white">{apodItem.title}</p>
+                            </div>
+                            <div className="modal-body">
+                                <div className="py-3 px-5 text-center">
+                                    <Apod item={apodItem}/>
+                                </div>
+                                <p className="mb-4 text-white overflow-auto" data-spy="scroll"
+                                   style={{height: 200}}>{apodItem.explanation}</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-sm btn-white text-tertiary">Date
+                                    : {apodItem.date}</button>
+                                <button type="button" className="close ml-auto" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <Camera apiKey={token} roverName={selectedRover} photos={photos}/>
+                </div>
+            </React.Fragment>
+        );
+    }
 }
 
 export default Nasa;
