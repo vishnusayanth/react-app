@@ -9,9 +9,8 @@ export default function Home() {
                      src="./assets/img/logo.png" height="60" alt="App logo"/>
             </div>
             <div className="container">
-                    <div className="row">
-                        <div className="text-center">
-                            <img className="navbar-brand-dark" src={"./assets/img/logo.png"} height="70"
+                    <div className="text-center">
+                            <img className="navbar-brand-dark" src={"./assets/img/logo.png"} height="50" width="50"
                                  alt="Logo"/>
                                 <div className={"text-dark"}>
                                     <h1 className="display-1">Nirvana</h1>
@@ -25,16 +24,13 @@ export default function Home() {
                                             className="fas fa-user-lock mr-2 d-none d-sm-inline"> </span> About developer</a>
                                     </div>
                                 </div>
-                        </div>
                     </div>
                 </div>
             <section className="section section-lg bg-primary text-white">
                 <div className="container">
-                    <div className="row justify-content-center mb-5 mb-lg-6">
-                        <div className="col-12 text-center">
+                    <div className="col-12 text-center row justify-content-center mb-5 mb-lg-6">
                             <h2 className="h1 px-lg-5">Features</h2>
                             <p className="lead px-lg-8">This application provides the below features built from various external API sources.</p>
-                        </div>
                     </div>
                     <div className="row">
                         <div className="col-12 col-sm-6 col-lg-3">
