@@ -126,13 +126,13 @@
                           </span>
                             <div class="multi-level collapse " role="list" id="submenu-pages" aria-expanded="false">
                                 <ul class="flex-column nav">
-                                    <li class="nav-item"><a class="nav-link" target="_blank"
+                                    <li class="nav-item"><a class="nav-link" target="_blank" rel="noreferrer"
                                                             href="https://vishnusayanth.pythonanywhere.com/"><span>Nirvana App</span></a>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" target="_blank"
+                                    <li class="nav-item"><a class="nav-link" target="_blank" rel="noreferrer"
                                                             href="https://vishnusayanth-express-app.herokuapp.com/"><span>Express API</span></a>
                                     </li>
-                                    <li class="nav-item"><a class="nav-link" target="_blank"
+                                    <li class="nav-item"><a class="nav-link" target="_blank" rel="noreferrer"
                                                             href="https://api.nasa.gov/"><span>NASA API</span></a>
                                     </li>
                                 </ul>
@@ -150,7 +150,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://github.com/vishnusayanth/react-app" target="_blank"
+                            <a href="https://github.com/vishnusayanth/react-app" target="_blank" rel="noreferrer"
                                class="nav-link d-flex align-items-center">
                                 <span class="sidebar-icon"><span class="fas fa-info-circle"></span></span>
                                 <span>Source code</span>
@@ -188,16 +188,16 @@
                                         </div>
                                     </a>
                                     <div class="dropdown-menu dashboard-dropdown dropdown-menu-right mt-2">
-                                        <a class="dropdown-item font-weight-bold"
+                                        <a class="dropdown-item font-weight-bold" target="_blank" rel="noreferrer"
                                            href="https://vishnusayanth.github.io"><span
                                                 class="fab fa-firefox"></span>Web Page</a>
-                                        <a class="dropdown-item font-weight-bold"
+                                        <a class="dropdown-item font-weight-bold" target="_blank" rel="noreferrer"
                                            href="https://linkedin.com/in/vishnusayanth"><span
                                                 class="fab fa-linkedin"></span>Linkedin</a>
-                                        <a class="dropdown-item font-weight-bold"
+                                        <a class="dropdown-item font-weight-bold" target="_blank" rel="noreferrer"
                                            href="https://github.com/vishnusayanth"><span
                                                 class="fab fa-github"></span>Github</a>
-                                        <a class="dropdown-item font-weight-bold"
+                                        <a class="dropdown-item font-weight-bold" target="_blank" rel="noreferrer"
                                            href="https://hackerrank.com/vishnusayanth"><span
                                                 class="fab fa-hackerrank"></span>HackerRank</a>
                                         <div role="separator" class="dropdown-divider"></div>
@@ -217,7 +217,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 <!-- Core -->
 <script src="../../vendor/popper.js/dist/umd/popper.min.js"></script>
@@ -258,6 +257,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
+        $('#form').submit(function (e) {
+            e.preventDefault();
+            let url = this.action;
+            let formData = $('#form').serialize();
+            let posting = $.post(url, formData);
+            posting.done(function (data) {
+                alert(data.data);
+            });
+        });
+
         $('#topbarInputIconLeft').keyup(function () {
             let txt = $('#topbarInputIconLeft').val().toLowerCase();
             $('.search-item').each(function () {
