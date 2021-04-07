@@ -73,11 +73,6 @@ function Profile() {
                     </div>
                 </div>
                 <div className="col-12 col-xl-4">
-                    <div className="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US"
-                         data-type="vertical" data-theme="dark" data-vanity="vishnusayanth"><a
-                        className="LI-simple-link"
-                        href='https://in.linkedin.com/in/vishnusayanth?trk=profile-badge'>Vishnu Sayanth A V</a>
-                    </div>
                     <div>
                         <br/>
                         <a target={"_blank"} rel={"noreferrer"} href={"https://github.com/vishnusayanth/"}
@@ -104,8 +99,6 @@ function Profile() {
                     </div>
                 </div>
             </div>
-            <script type="text/javascript" src={"https://platform.linkedin.com/badges/js/profile.js"} async
-                    defer> </script>
         </React.Fragment>
     );
 }
