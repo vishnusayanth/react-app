@@ -3,7 +3,7 @@ import React from 'react';
 function Countries(props) {
     return (
         <div className="table-responsive">
-        <small>Click country for more info.</small>
+        <small>Click on country name for more info.</small>
             <table className="table align-items-center table-flush">
                 <thead className="thead-light">
                 <tr>
