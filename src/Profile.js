@@ -2,7 +2,7 @@ import React from 'react';
 
 
 function Profile() {
-    let url = 'https://vishnusayanth.pythonanywhere.com/api/countries/';
+    let url = 'https://vishnusayanth-django-app.herokuapp.com/api/countries/';
     const tokenString = process.env.REACT_APP_NIRVANA_API_KEY;
     let [countries, setCountries] = React.useState([]);
     React.useEffect(() => {
@@ -20,7 +20,7 @@ function Profile() {
                 <div className="col-12 col-xl-8">
                     <div className="card card-body bg-white border-light shadow-sm mb-4">
                         <h2 className="h5 mb-4">Contact me</h2>
-                        <form id={"form"} action={'https://vishnusayanth.pythonanywhere.com/contact/'}>
+                        <form id={"form"} action={'https://vishnusayanth-django-app.herokuapp.com/contact/'}>
                             <div className="row">
                                 <div className="col-md-6 mb-3">
                                     <div>
