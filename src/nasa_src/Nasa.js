@@ -34,8 +34,7 @@ function Nasa() {
         return (
             <React.Fragment>
                 <h3 align="center" className={"display-4"}>NASA</h3>
-                <button type="button" className="btn btn-sm btn-tertiary col-sm-3" data-toggle="modal"
-                        data-target="#modal-achievement">Astronomy Picture Of the Day
+                <button type="button" className="btn btn-sm btn-tertiary" data-toggle="modal" data-target="#modal-achievement">Astronomy Picture Of the Day
                 </button>
                 <br/><br/>
                 <div>
