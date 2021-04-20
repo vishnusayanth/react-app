@@ -18,7 +18,7 @@ export default function Home() {
                                         <h2 className="h3 text-muted mr-3">Application built using React.js </h2>
                                     </div>
                                     <div className="d-flex justify-content-center align-items-end flex-wrap mb-6">
-                                        <a href="https://github.com/vishnusayanth/react-app" target="_blank"  className="btn btn-secondary text-dark mr-4 mb-3 mb-lg-0"><span
+                                        <a href="https://github.com/vishnusayanth/react-app" target="_blank"  rel="noreferrer" className="btn btn-secondary text-dark mr-4 mb-3 mb-lg-0"><span
                                             className="fas fa-info-circle mr-2 d-none d-sm-inline"> </span> Source code</a>
                                         <a href="/profile"  className="btn btn-secondary text-dark mr-4 mb-3 mb-lg-0"><span
                                             className="fas fa-user-lock mr-2 d-none d-sm-inline"> </span> About developer</a>
