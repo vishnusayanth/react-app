@@ -34,12 +34,13 @@ function Nasa() {
         return (
             <React.Fragment>
                 <h3 align="center" className={"display-4"}>NASA</h3>
-                <div>
-                    <Rovers roversList={roversList} selectFunction={setSelectedRover}/>
-                </div>
                 <button type="button" className="btn btn-sm btn-tertiary col-sm-3" data-toggle="modal"
                         data-target="#modal-achievement">Astronomy Picture Of the Day
                 </button>
+                <div>
+                    <Rovers roversList={roversList} selectFunction={setSelectedRover}/>
+                </div>
+                
                 <div className="modal fade" id="modal-achievement" tabIndex="-1" role="dialog"
                      aria-labelledby="modal-achievement" aria-hidden="true">
                     <div className="modal-dialog modal-tertiary modal-dialog-centered" role="document">
