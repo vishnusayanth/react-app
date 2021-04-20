@@ -37,7 +37,7 @@ function Nasa() {
                 <button type="button" className="btn btn-sm btn-tertiary col-sm-3" data-toggle="modal"
                         data-target="#modal-achievement">Astronomy Picture Of the Day
                 </button>
-            <br/>
+                <br/><br/>
                 <div>
                     <Rovers roversList={roversList} selectFunction={setSelectedRover}/>
                 </div>
