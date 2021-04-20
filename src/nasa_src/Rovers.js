@@ -7,13 +7,13 @@ function Rovers(props) {
              {props.roversList.map(rover =>        
                   <div key={rover} className="col">
                     <div className="card h-100">
-                      <img src={'../../assets/img/rovers/'+rover + '.jpg'} className="card-img-top" alt={rover}>
+                      <img src={'../../assets/img/rovers/'+rover + '.jpg'} className="card-img-top" alt={rover}/>
                       <div className="card-body">
                         <h5 className="card-title">Mars Rover : {rover}</h5>
                         <p className="card-text">Click below to view images.</p>
                       </div>
-                      <div class="card-footer">
-                        <small className="text-muted" onClick="{()=>props.selectFunction(rover)}">Click me</small>
+                      <div className="card-footer">
+                        <small className="text-muted" onClick={()=>props.selectFunction(rover)}>Click me</small>
                       </div>
                     </div>
                   </div>  
