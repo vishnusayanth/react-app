@@ -2,25 +2,22 @@ import React from 'react';
 
 
 function Rovers(props) {
-    return (
-        <div className="row justify-content-md-center">
-            {props.roversList.map(rover =>
-                <div key={rover} className="col-12 col-sm-6 col-xl-4 mb-4">
-                    <div className="card border-light shadow-sm">
-                        <div className="card-body">
-                            <div className="row d-block d-xl-flex align-items-center">
-                                <img src={'../../assets/img/rovers/'+rover + '.jpg'} className="img-fluid" alt={rover}/>
-                                <div className="col-12 col-xl-7 px-xl-0">
-                                    <div className="d-none d-sm-block">
-                                        <h2 className="h5">Mars Rover : </h2>
-                                        <button className="mb-1 btn btn-dark" onClick={()=>props.selectFunction(rover)}>{rover}</button>
-                                    </div>                                    
-                                </div>
-                            </div>
-                        </div>
+    return (     
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+             {props.roversList.map(rover =>        
+                  <div key={rover} class="col">
+                    <div class="card h-100">
+                      <img src={'../../assets/img/rovers/'+rover + '.jpg'} class="card-img-top" alt={rover}>
+                      <div class="card-body">
+                        <h5 class="card-title">Mars Rover : {rover}</h5>
+                        <p class="card-text">Click below to view images.</p>
+                      </div>
+                      <div class="card-footer">
+                        <small class="text-muted" onClick={()=>props.selectFunction(rover)}>Click me!</small>
+                      </div>
                     </div>
-                </div>
-            )}
+                  </div>  
+             )}
         </div>
     );
 }
