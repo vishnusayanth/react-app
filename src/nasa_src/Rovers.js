@@ -13,7 +13,7 @@ function Rovers(props) {
                         <p className="card-text">Click below to view images.</p>
                       </div>
                       <div className="card-footer">
-                        <small className="text-muted" onClick={()=>props.selectFunction(rover)}>Click me</small>
+                        <button className="btn btn-sm btn-dark"  onClick={()=>props.selectFunction(rover)}>Snapshots</button>
                       </div>
                     </div>
                   </div>  
