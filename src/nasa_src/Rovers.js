@@ -10,9 +10,7 @@ function Rovers(props) {
                       <img src={'../../assets/img/rovers/'+rover + '.jpg'} className="card-img-top" alt={rover}/>
                       <div className="card-body">
                         <h5 className="card-title">Mars Rover : {rover}</h5>
-                        <p className="card-text">Click below to view images.</p>
-                      </div>
-                      <div className="card-footer">
+                        <p className="card-text">Click below and scroll down to view images.</p>
                         <button className="btn btn-sm btn-dark"  onClick={()=>props.selectFunction(rover)}>Snapshots</button>
                       </div>
                     </div>
