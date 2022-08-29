@@ -89,7 +89,7 @@ function Profile() {
                         </a>
                         <br/>
                         <br/>
-                        <a target={"_blank"} rel={"noreferrer"} href={"https://vishnusayanth.github.io/"}
+                        <a target={"_blank"} rel={"noreferrer"} href={"https://vishnusayanth.com/"}
                            className="btn btn-primary" type="button">
                             <span className="mr-1"><span className="fab fa-firefox"> </span></span>
                             Web Page
