@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from "./Home";
 import Nasa from './nasa_src/Nasa';
-import Express from "./express_src/Express";
 import Location from "./nirvana_src/Location";
 import Profile from "./Profile";
 import {
@@ -25,9 +24,6 @@ ReactDOM.render(
                 </Route>
                 <Route exact path="/location">
                     <Location/>
-                </Route>
-                <Route exact path="/movies">
-                    <Express/>
                 </Route>
                 <Route exact path="/profile">
                     <Profile/>

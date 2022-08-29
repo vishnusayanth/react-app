@@ -13,7 +13,7 @@ function Location() {
     let setCountry = country => {
         setSelectedCountry(country);
         setStates([]);
-        fetch(`https://vishnusayanth-django-app.herokuapp.com/api/states/${country.id}`, {
+        fetch(`https://python.vishnusayanth.com/api/states/${country.id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ function Location() {
     }
     React.useEffect(() => {
         setFetchDone(false);
-        fetch(`https://vishnusayanth-django-app.herokuapp.com/api/countries/`, {
+        fetch(`https://python.vishnusayanth.com/api/countries/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
