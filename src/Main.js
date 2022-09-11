@@ -1,12 +1,11 @@
 import React from "react";
-import Dummy from "./main/Dummy";
+import Home from "./main/Home";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Error from "./main/Error";
 import Dog from "./components/Dog";
 import Geography from "./main/Geography";
 import Movie from "./main/Movie";
 import Nasa from "./main/Nasa";
-import Joke from "./components/Joke";
 
 function Main() {
     let [pageTitle, setPageTitle] = React.useState('Dashboard');
@@ -15,17 +14,7 @@ function Main() {
             <aside id="sidebar" className="sidebar">
                 <ul className="sidebar-nav" id="sidebar-nav">
 
-                    <li className="nav-item">
-                        <a className="nav-link " data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                            <i className="bi bi-menu-button-wide"></i><span>Yo Mamma jokes!</span><i
-                            className="bi bi-chevron-down ms-auto"></i>
-                        </a>
-                        <ul id="components-nav" className="nav-content collapse show" data-bs-parent="#sidebar-nav">
-                            <li>
-                                <Joke/>
-                            </li>
-                        </ul>
-                    </li>
+
                     <li className="nav-heading">Pages</li>
 
                     <li className="nav-item">
@@ -65,7 +54,7 @@ function Main() {
 
                                 <BrowserRouter>
                                     <Routes>
-                                        <Route exact path="/" element={<Dummy setPageTitle={setPageTitle}/>}/>
+                                        <Route exact path="/" element={<Home setPageTitle={setPageTitle}/>}/>
                                         <Route exact path="nasa" element={<Nasa setPageTitle={setPageTitle}/>}/>
                                         <Route exact path="geography"
                                                element={<Geography setPageTitle={setPageTitle}/>}/>
