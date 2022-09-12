@@ -9,11 +9,7 @@ export default function Nasa(props) {
         fetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${API_KEY}`, {
             method: 'GET',
         }).then(res => res.json()).then(res => {
-            console.log(res)
-            for (let i = 0; i < res.photos.length; i++) {
-                roverPics.push(res.photos[i]);
-                setRoverPics(roverPics)
-            }
+            setRoverPics(res.photos)
         }).then(() => {
             document.getElementById('rover-spinner').style.display = 'none';
         });

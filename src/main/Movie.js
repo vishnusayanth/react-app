@@ -12,7 +12,7 @@ export default function Movie(props) {
     const API_KEY = '1a5d9d22';
     let setMovie = movie => {
         setSecondSpinner(true);
-        fetch('http://www.omdbapi.com/?i=' + movie.imdbID + '&apikey=' + API_KEY, {
+        fetch('https://www.omdbapi.com/?i=' + movie.imdbID + '&apikey=' + API_KEY, {
             method: 'GET',
         }).then(res => res.json()).then(res => setSelectedMovie(res)).finally(() => setSecondSpinner(false))
     }
@@ -25,7 +25,7 @@ export default function Movie(props) {
     }
     let searchMedia = () => {
         setSpinner(true);
-        fetch(`http://www.omdbapi.com/?s=${searchText}&type=${typeOfMedia}&apikey=${API_KEY}`, {
+        fetch(`https://www.omdbapi.com/?s=${searchText}&type=${typeOfMedia}&apikey=${API_KEY}`, {
             method: "GET",
         }).then(res => res.json()).then(res => {
             if (res.Search) {

@@ -11,7 +11,7 @@ export default function Home() {
                     <h4>This is an open source web application that consumes APIs from
                         <a target="_blank" href="https://python.vishnusayanth.com"> Nirvana</a>,
                         <a target="_blank" href="https://api.nasa.gov/"> Nasa</a> and
-                        <a target="_blank" href="http://www.omdbapi.com/"> OMDB</a>.</h4>
+                        <a target="_blank" href="https://www.omdbapi.com/"> OMDB</a>.</h4>
 
                 </div>
                 <div className="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
