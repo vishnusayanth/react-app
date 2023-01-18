@@ -3,6 +3,7 @@ import React from "react";
 
 export default function Dog(props) {
     let [url, setUrl] = React.useState('');
+    let [spinner, setSpinner] = React.useState(true);
     const ref = React.useRef(null)
     let fetchDog = () => {
         fetch(`https://dog.ceo/api/breeds/image/random`, {
@@ -15,11 +16,15 @@ export default function Dog(props) {
         return () => {
             if (ref.current) {
                 clearInterval(ref.current)
+                setSpinner(false);
             }
         }
 
     }, [])
-
+    if (spinner) {
+        return <div className="spinner-border" role="status">
+        </div>
+    }
     return <React.Fragment>
         <div className={"card shadow-lg"}>
             <img src={url} alt={"dog"} className={"rounded shadow-lg"} style={{'maxHeight': 500, 'maxWidth': 500}}/>
