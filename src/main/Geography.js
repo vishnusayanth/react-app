@@ -101,7 +101,7 @@ export default function Geography(props) {
                             {states.length > 0 && <div className="card-body">
                                 <br/>
                                 <center>
-                                    <img src={flag} className="card-img-top rounded shadow-lg" alt="flag"
+                                    <img src={flag} crossorigin="anonymous" className="card-img-top rounded shadow-lg" alt="flag"
                                          style={{'height': 100, 'width': 180}}/>
                                 </center>
                                 <br/>
