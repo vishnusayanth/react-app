@@ -15,7 +15,6 @@ export default function Dog(props) {
         return () => {
             if (ref.current) {
                 clearInterval(ref.current)
-                setSpinner(false);
             }
         }
 
