@@ -3,7 +3,6 @@ import React from "react";
 
 export default function Dog(props) {
     let [url, setUrl] = React.useState('');
-    let [spinner, setSpinner] = React.useState(true);
     const ref = React.useRef(null)
     let fetchDog = () => {
         fetch(`https://dog.ceo/api/breeds/image/random`, {
@@ -21,7 +20,7 @@ export default function Dog(props) {
         }
 
     }, [])
-    if (spinner) {
+    if (url === '') {
         return <div className="spinner-border" role="status">
         </div>
     }
