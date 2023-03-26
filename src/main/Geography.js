@@ -38,7 +38,7 @@ export default function Geography(props) {
         }
     }
     let setCountry = country => {
-        let tempIso = country.iso_code.split('/')[0].replace(' ', '');
+        let tempIso = country.iso_code.split('/')[0].replace(' ', '').toLowerCase();
         setSelectedCountry(country);
         setStates([]);
         setFlag(`https://flagcdn.com/16x12/${tempIso}.png`);
