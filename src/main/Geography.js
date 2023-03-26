@@ -41,8 +41,8 @@ export default function Geography(props) {
         let tempIso = country.iso_code.split('/')[0].replace(' ', '').toLowerCase();
         setSelectedCountry(country);
         setStates([]);
-        setFlag(`https://flagcdn.com/16x12/${tempIso}.png`);
-        setFlagSrcSet(`https://flagcdn.com/32x24/${tempIso}.png 2x,https://flagcdn.com/48x36/${tempIso}.png 3x"`);
+        setFlag(`https://flagcdn.com/w20/${tempIso}.png`);
+        setFlagSrcSet(`https://flagcdn.com/w40/${tempIso}.png 2x"`);
         setSecondSpinner(true)
         fetch(`https://python.vishnusayanth.com/api/states/${country.id}`, {
             method: 'GET',
