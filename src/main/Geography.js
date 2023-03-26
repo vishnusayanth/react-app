@@ -38,7 +38,7 @@ export default function Geography(props) {
     let setCountry = country => {
         setSelectedCountry(country);
         setStates([]);
-        setFlag(`https://countryflagsapi.com/png/${country.iso_code.split('/')[0].replace(' ', '')}`);
+        setFlag(`https://flagcdn.com/16x12/${country.iso_code.split('/')[0].replace(' ', '')}.png`);
         setSecondSpinner(true)
         fetch(`https://python.vishnusayanth.com/api/states/${country.id}`, {
             method: 'GET',
