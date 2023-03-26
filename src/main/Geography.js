@@ -2,12 +2,14 @@ import Table from "../components/Table";
 import React from "react";
 
 export default function Geography(props) {
+    // crossorigin="anonymous"
     let [spinner, setSpinner] = React.useState(true);
     let [secondSpinner, setSecondSpinner] = React.useState(false);
     let [tableBody, setTableBody] = React.useState([]);
     let tableHead = ['name', 'continent_name', 'capital', 'official_language', 'country_code', 'iso_code',];
     const [selectedCountry, setSelectedCountry] = React.useState(null);
     const [flag, setFlag] = React.useState('');
+    const [flagSrcSet, setFlagSrcSet] = React.useState('');
     const tokenString = '2a5faa685c6f6d3f1c2840b98a8aeb25c0b3de61';
     let [states, setStates] = React.useState([]);
     let searchCountry = (searchText) => {
@@ -36,9 +38,11 @@ export default function Geography(props) {
         }
     }
     let setCountry = country => {
+        let tempIso = country.iso_code.split('/')[0].replace(' ', '');
         setSelectedCountry(country);
         setStates([]);
-        setFlag(`https://flagcdn.com/16x12/${country.iso_code.split('/')[0].replace(' ', '')}.png`);
+        setFlag(`https://flagcdn.com/16x12/${tempIso}.png`);
+        setFlagSrcSet(`https://flagcdn.com/32x24/${tempIso}a.png 2x,https://flagcdn.com/48x36/${tempIso}.png 3x"`);
         setSecondSpinner(true)
         fetch(`https://python.vishnusayanth.com/api/states/${country.id}`, {
             method: 'GET',
@@ -101,7 +105,7 @@ export default function Geography(props) {
                             {states.length > 0 && <div className="card-body">
                                 <br/>
                                 <center>
-                                    <img src={flag} crossorigin="anonymous" className="card-img-top rounded shadow-lg" alt="flag"
+                                    <img src={flag} srcset={flagSrcSet} className="card-img-top rounded shadow-lg" alt="flag"
                                          style={{'height': 100, 'width': 180}}/>
                                 </center>
                                 <br/>
