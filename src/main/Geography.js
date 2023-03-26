@@ -42,7 +42,7 @@ export default function Geography(props) {
         setSelectedCountry(country);
         setStates([]);
         setFlag(`https://flagcdn.com/16x12/${tempIso}.png`);
-        setFlagSrcSet(`https://flagcdn.com/32x24/${tempIso}a.png 2x,https://flagcdn.com/48x36/${tempIso}.png 3x"`);
+        setFlagSrcSet(`https://flagcdn.com/32x24/${tempIso}.png 2x,https://flagcdn.com/48x36/${tempIso}.png 3x"`);
         setSecondSpinner(true)
         fetch(`https://python.vishnusayanth.com/api/states/${country.id}`, {
             method: 'GET',
